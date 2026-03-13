@@ -49,7 +49,14 @@ section {
   box-shadow: 3px 3px 6px rgb(180, 180, 180);
   margin-top: 20px;
 }
-
+img{
+  width: 50%;
+  height: auto;
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px rgb(179, 179, 179);
+  display: block;
+  margin: auto;
+}
 h2 {
   color: #8ebde9;
 }
