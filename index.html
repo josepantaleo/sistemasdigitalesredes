@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redes Informáticas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Sistema Digitales - Redes Informáticas</h1>
+      <h2>Prof. J. Pantaleo</h2>
+      <p>Concepto, clasificación y topologías de red</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#concepto">Concepto</a></li>
+        <li><a href="#clasificacion">Clasificación</a></li>
+        <li><a href="#topologias">Topologías</a></li>
+      </ul>
+    </nav>
+
+    <main class="contenedor">
+      <section id="concepto">
+        <h2>Concepto de Redes Informáticas</h2>
+
+        <p>
+          Una red informática es un conjunto de computadoras y dispositivos
+          conectados entre sí para compartir información, recursos y servicios.
+          Estas conexiones pueden realizarse mediante cables físicos o mediante
+          tecnologías inalámbricas.
+        </p>
+
+        <p>
+          Las redes permiten que los usuarios intercambien datos, accedan a
+          internet, compartan archivos e impresoras y trabajen de forma
+          colaborativa desde distintos dispositivos.
+        </p>
+      </section>
+
+      <section id="clasificacion">
+        <h2>Clasificación de Redes Informáticas</h2>
+
+        <h3>Según su alcance</h3>
+
+        <ul>
+          <li><b>PAN:</b> Red personal de corto alcance.</li>
+          <li><b>LAN:</b> Red local utilizada en hogares o instituciones.</li>
+          <li><b>MAN:</b> Red que cubre una ciudad.</li>
+          <li><b>WAN:</b> Red que conecta grandes distancias como Internet.</li>
+        </ul>
+
+        <h3>Según el tipo de conexión</h3>
+
+        <ul>
+          <li><b>Red cableada:</b> utiliza cables de red o fibra óptica.</li>
+          <li>
+            <b>Red inalámbrica:</b> utiliza tecnologías como WiFi o Bluetooth.
+          </li>
+        </ul>
+      </section>
+
+      <section id="topologias">
+        <h2>Topologías de Red</h2>
+
+        <div class="grilla">
+          <div class="tarjeta">
+            <h3>Topología en Estrella</h3>
+
+            <p>
+              Todos los dispositivos se conectan a un equipo central como un
+              switch o router, que administra el flujo de información.
+            </p>
+
+            <h4>Ventajas</h4>
+
+            <ul>
+              <li>Fácil instalación.</li>
+              <li>Si un cable falla no afecta a toda la red.</li>
+              <li>Permite agregar nuevos dispositivos fácilmente.</li>
+            </ul>
+
+            <h4>Desventajas</h4>
+
+            <ul>
+              <li>Dependencia del dispositivo central.</li>
+              <li>Mayor cantidad de cableado.</li>
+              <li>Puede ser más costosa.</li>
+            </ul>
+          </div>
+
+          <div class="tarjeta">
+            <h3>Topología en Bus</h3>
+
+            <p>
+              Todos los dispositivos comparten un mismo cable principal llamado
+              cable troncal por donde circula la información.
+            </p>
+
+            <h4>Ventajas</h4>
+
+            <ul>
+              <li>Menor cantidad de cables.</li>
+              <li>Instalación sencilla.</li>
+              <li>Costo bajo.</li>
+            </ul>
+
+            <h4>Desventajas</h4>
+
+            <ul>
+              <li>Si falla el cable principal la red se detiene.</li>
+              <li>Difícil detectar errores.</li>
+              <li>Rendimiento bajo con muchos equipos.</li>
+            </ul>
+          </div>
+
+          <div class="tarjeta">
+            <h3>Topología en Anillo</h3>
+
+            <p>
+              Los dispositivos se conectan formando un círculo donde los datos
+              circulan pasando por cada computadora hasta llegar al destino.
+            </p>
+
+            <h4>Ventajas</h4>
+
+            <ul>
+              <li>Transmisión ordenada de datos.</li>
+              <li>Menos colisiones.</li>
+              <li>Buen rendimiento en redes pequeñas.</li>
+            </ul>
+
+            <h4>Desventajas</h4>
+
+            <ul>
+              <li>Si un dispositivo falla afecta la red.</li>
+              <li>Configuración más compleja.</li>
+              <li>Dificultad para ampliar la red.</li>
+            </ul>
+          </div>
+
+          <div class="tarjeta">
+            <h3>Topología en Malla</h3>
+
+            <p>
+              Cada dispositivo se conecta con varios otros dispositivos,
+              permitiendo múltiples rutas para transmitir información.
+            </p>
+
+            <h4>Ventajas</h4>
+
+            <ul>
+              <li>Alta confiabilidad.</li>
+              <li>Si un enlace falla existe otro camino.</li>
+              <li>Mayor estabilidad de la red.</li>
+            </ul>
+
+            <h4>Desventajas</h4>
+
+            <ul>
+              <li>Muy costosa.</li>
+              <li>Gran cantidad de cables.</li>
+              <li>Instalación compleja.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Tabla Comparativa de Topologías</h2>
+
+        <table>
+          <tr>
+            <th>Topología</th>
+            <th>Característica</th>
+            <th>Ventaja</th>
+            <th>Desventaja</th>
+          </tr>
+
+          <tr>
+            <td>Estrella</td>
+            <td>Conexión a nodo central</td>
+            <td>Fácil administración</td>
+            <td>Dependencia del nodo</td>
+          </tr>
+
+          <tr>
+            <td>Bus</td>
+            <td>Cable principal compartido</td>
+            <td>Bajo costo</td>
+            <td>Si falla el cable se cae la red</td>
+          </tr>
+
+          <tr>
+            <td>Anillo</td>
+            <td>Conexión circular</td>
+            <td>Transmisión ordenada</td>
+            <td>Difícil ampliación</td>
+          </tr>
+
+          <tr>
+            <td>Malla</td>
+            <td>Todos conectados entre sí</td>
+            <td>Muy confiable</td>
+            <td>Alto costo</td>
+          </tr>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>Teórico - Redes Informáticas</p>
+    </footer>
+  </body>
+</html>
