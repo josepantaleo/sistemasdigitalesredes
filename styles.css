@@ -123,8 +123,8 @@ contenedor-video{
 
 .contenedor-video iframe{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     border-radius: 20px;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
 }
