@@ -271,16 +271,233 @@
           reales.
         </p>
 
-       <img src="cisco.jpg" alt="Topologías de red" />
-       <h2>Ejercicio</h2>
-       <h3>Cree en Cisco Packet Tracer la siguiente red</h3>
-       <img class="pt" src="ejercicio1pt.jpg" alt="">
-       <h3>Verifique que todo este en verde</h3> 
-       <h3>Nota: una vez terminado guarde con su nombre completo o apellidos mas ejercicio1 </h3>
-        <a href="https://mega.nz/file/xhFRHIoD#SQDi6CVJqrLAed3I5nH67nEsnxX9jgSPrBjtrkZZxIQ">Descargar Cisco Packet Tracer</a>
-       
+        <img src="cisco.jpg" alt="Topologías de red" />
+        <h2>Ejercicio</h2>
+        <h3>Cree en Cisco Packet Tracer la siguiente red</h3>
+        <img class="pt" src="ejercicio1pt.jpg" alt="" />
+        <h3>Verifique que todo este en verde</h3>
+        <h3>
+          Nota: una vez terminado guarde con su nombre completo o apellidos mas
+          ejercicio1
+        </h3>
+        <a
+          href="https://mega.nz/file/xhFRHIoD#SQDi6CVJqrLAed3I5nH67nEsnxX9jgSPrBjtrkZZxIQ"
+          >Descargar Cisco Packet Tracer</a
+        >
       </section>
 
+      <section>
+        <h1>Direcciones IP y Redes</h1>
+
+        <h2>1. ¿Qué es una dirección IP?</h2>
+        <p>
+          Una dirección IP (Internet Protocol) es un identificador único
+          asignado a cada dispositivo conectado a una red que utiliza el
+          protocolo de Internet, como computadoras, celulares o routers.
+        </p>
+        <p>
+          Es como la dirección de tu casa, pero en Internet, para que los datos
+          sepan a dónde ir.
+        </p>
+
+        <h2>2. Tipos de direcciones IP</h2>
+
+        <h3>a) Según su versión</h3>
+        <ul>
+          <li>
+            <strong>IPv4:</strong> 4 números separados por puntos (0–255).
+            Ejemplo: <code>192.168.0.1</code>. Límite: ~4.3 mil millones de
+            direcciones posibles.
+          </li>
+          <li>
+            <strong>IPv6:</strong> 8 bloques de 4 caracteres hexadecimales
+            separados por dos puntos. Ejemplo:
+            <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code>. Necesaria por
+            la escasez de IPv4 y permite muchas más direcciones.
+          </li>
+        </ul>
+
+        <h3>b) Según su uso</h3>
+        <ul>
+          <li>
+            <strong>IP Pública:</strong> Visible en Internet. Asignada por tu
+            proveedor de Internet (ISP). Ejemplo: <code>186.130.42.15</code>.
+          </li>
+          <li>
+            <strong>IP Privada:</strong> Solo funciona dentro de redes locales
+            (hogar, empresa). Ejemplos de rangos:
+            <ul>
+              <li>192.168.0.0 – 192.168.255.255</li>
+              <li>10.0.0.0 – 10.255.255.255</li>
+              <li>172.16.0.0 – 172.31.255.255</li>
+            </ul>
+          </li>
+          <li>
+            <strong>IP Estática vs Dinámica:</strong>
+            <ul>
+              <li>Estática: No cambia; ideal para servidores o cámaras.</li>
+              <li>
+                Dinámica: Cambia con el tiempo; usada por la mayoría de usuarios
+                domésticos.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>3. Cómo se usa una dirección IP</h2>
+        <ul>
+          <li>
+            Para enviar datos: Permite que los servidores sepan a dónde enviar
+            la información.
+          </li>
+          <li>
+            Para identificar dispositivos: El router asigna IPs privadas a cada
+            dispositivo en casa.
+          </li>
+        </ul>
+
+        <h2>4. Cómo ver tu IP</h2>
+        <ul>
+          <li>IP pública: Busca "cuál es mi IP" en Google.</li>
+          <li>
+            IP privada:
+            <ul>
+              <li>Windows: <code>cmd → ipconfig</code></li>
+              <li>Mac/Linux: <code>ifconfig</code> o <code>ip addr</code></li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>5. Clases de IP (IPv4)</h2>
+        <table>
+          <tr>
+            <th>Clase</th>
+            <th>Rango del primer octeto</th>
+            <th>Uso principal</th>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>0 – 127</td>
+            <td>Redes muy grandes</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>128 – 191</td>
+            <td>Redes medianas</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>192 – 223</td>
+            <td>Redes pequeñas / domésticas</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>224 – 239</td>
+            <td>Multicast (envío a varios destinos)</td>
+          </tr>
+          <tr>
+            <td>E</td>
+            <td>240 – 255</td>
+            <td>Experimental / investigación</td>
+          </tr>
+        </table>
+        <p>
+          Nota: La clase 127 se reserva para <code>localhost (127.0.0.1)</code>,
+          que es tu propio equipo.
+        </p>
+
+        <h2>6. Cómo saber la clase de tu IP</h2>
+        <p>Toma el primer número de tu IP. Ejemplo:</p>
+        <p>IP = 192.168.10.5 → primer número = 192 → Clase C</p>
+
+        <h2>7. ¿Qué es una máscara de subred?</h2>
+        <p>
+          Una máscara de subred define qué parte de la IP corresponde a la red y
+          qué parte a los hosts. Se combina con la IP para determinar si dos
+          dispositivos están en la misma red.
+        </p>
+        <p>Ejemplo:</p>
+        <ul>
+          <li>IP: <code>192.168.1.10</code></li>
+          <li>Máscara: <code>255.255.255.0</code></li>
+          <li>255 → parte de red</li>
+          <li>0 → parte de host</li>
+        </ul>
+
+        <h3>a) Notación</h3>
+        <ul>
+          <li>Decimal con puntos: <code>255.255.255.0</code></li>
+          <li>
+            CIDR: <code>/n</code> indica el número de bits para la red. Ejemplo:
+            <code>192.168.1.10/24</code> → equivale a <code>255.255.255.0</code>
+          </li>
+        </ul>
+
+        <h3>b) Máscaras de subred comunes</h3>
+        <table>
+          <tr>
+            <th>Clase IP</th>
+            <th>Máscara típica</th>
+            <th>CIDR</th>
+            <th>Hosts posibles</th>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>255.0.0.0</td>
+            <td>/8</td>
+            <td>16,777,214</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>255.255.0.0</td>
+            <td>/16</td>
+            <td>65,534</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>255.255.255.0</td>
+            <td>/24</td>
+            <td>254</td>
+          </tr>
+        </table>
+        <p>
+          Cálculo de hosts: <code>2^n − 2</code>, donde n es el número de bits
+          para hosts (se restan 2 para la dirección de red y broadcast).
+        </p>
+
+        <h2>8. ¿Qué es la puerta de enlace (gateway)?</h2>
+        <p>
+          La puerta de enlace es un dispositivo (normalmente un router) que
+          conecta tu red local con otras redes, generalmente Internet.
+        </p>
+        <p>
+          Es como la puerta de tu casa: para salir a Internet, necesitas pasar
+          por ella. Los dispositivos en una red local envían al gateway los
+          datos destinados a otras redes.
+        </p>
+
+        <h3>a) Relación con IP y máscara</h3>
+        <ul>
+          <li>IP: identifica al dispositivo.</li>
+          <li>Máscara de subred: define la red local.</li>
+          <li>
+            Puerta de enlace: indica a dónde enviar datos fuera de la red local.
+          </li>
+        </ul>
+
+        <p>Ejemplo de red doméstica:</p>
+        <ul>
+          <li>IP de tu PC: <code>192.168.1.10</code></li>
+          <li>Máscara: <code>255.255.255.0</code></li>
+          <li>Puerta de enlace: <code>192.168.1.1</code> (el router)</li>
+        </ul>
+
+        <p>
+          Esto significa que cualquier IP fuera del rango
+          <code>192.168.1.x</code> se enviará al router para su direccionamiento
+          correcto.
+        </p>
+      </section>
     </main>
 
     <!-- FOOTER → CIERRE -->
