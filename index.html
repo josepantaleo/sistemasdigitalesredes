@@ -562,34 +562,144 @@
             <li>¿Qué empresa las maneja?</li>
           </ul>
         </div>
+      </section>
+      <section>
+        <h1>🧠 Comandos de Red en Windows</h1>
+        <p>Guía práctica con ejemplos reales</p>
+        <h2>📌 Ver configuración de red</h2>
+        <div class="comando">ipconfig</div>
 
-        <div class="actividad">
-          <h2>🧭 4. Traceroute (camino de la red) inicio cmd - tracert</h2>
-          <p><strong>Objetivo:</strong> ver cómo viajan los datos</p>
+        <div class="comando">ipconfig /all</div>
 
-          <p><strong>Actividad:</strong></p>
-          <code>tracert 8.8.8.8</code>
-
-          <p><strong>Preguntas:</strong></p>
-          <ul>
-            <li>¿Cuántos saltos hay?</li>
-            <li>¿Dónde aumenta la latencia?</li>
-          </ul>
+        <div class="caso">
+          👉 Caso real: verificar IP, gateway y DNS cuando no hay internet
         </div>
 
-        <div class="actividad">
-          <h2>⚡ 5. Medir latencia con ping inicio cmd - ping</h2>
-          <p><strong>Objetivo:</strong> analizar velocidad</p>
+        <h2>🔄 Renovar IP</h2>
+        <div class="comando">ipconfig /release</div>
+        <p>Libera (elimina) la dirección IP actual que tiene tu computadora.</p>
+        <div class="comando">ipconfig /renew</div>
+        <p>Renueva la ip</p>
 
-          <p><strong>Actividad:</strong></p>
-          <code>ping 8.8.8.8</code><br />
-          <code>ping google.com</code>
+        <div class="caso">👉 Caso real: cuando aparece IP 169.254.x.x</div>
 
-          <p><strong>Preguntas:</strong></p>
-          <ul>
-            <li>¿Cuál responde más rápido?</li>
-          </ul>
+        <h2>🌐 Probar conexión</h2>
+        <div class="comando">ping 8.8.8.8</div>
+        <div class="comando">ping google.com</div>
+
+        <div class="caso">
+          👉 Si falla 8.8.8.8 → problema de red 👉 Si falla google.com →
+          problema DNS
         </div>
+
+        <h2>🧭 Ver ruta de red</h2>
+        <div class="comando">tracert google.com</div>
+
+        <div class="caso">👉 Detectar dónde se corta la conexión</div>
+        <div>
+          <p>Muestra la ruta que siguen los datos desde tu PC hasta Google.</p>
+
+          <ul>
+            <li>📍 Cada línea = un “salto” (router)</li>
+            <li>⏱️ Los “ms” = tiempo de respuesta</li>
+            <li>🔢 Máx. 30 saltos</li>
+          </ul>
+
+          <h2>🧠 Para qué sirve</h2>
+          <ul>
+            <li>Detectar dónde hay lentitud</li>
+            <li>Ver si falla tu red, tu proveedor o Internet</li>
+          </ul>
+
+          <h2>⚠️ Claves</h2>
+          <ul>
+            <li>
+              <code>* * *</code> → no responde ese salto (puede ser normal o
+              problema)
+            </li>
+            <li>Aumento grande de ms → posible congestión</li>
+          </ul>
+
+          <p class="resumen">
+            👉 En resumen: sirve para diagnosticar problemas de conexión viendo
+            el camino de la red.
+          </p>
+        </div>
+
+        <h2>🔍 Diagnóstico DNS</h2>
+
+        <div class="comando">ipconfig /flushdns</div>
+        <p>
+          Elimina todas las direcciones guardadas Obliga al sistema a consultar
+          nuevamente al DNS Corrige errores de resolución de nombres
+        </p>
+
+        <div class="caso">👉 Solucionar páginas que no cargan</div>
+
+        <h2>📡 Conexiones activas</h2>
+
+        <div class="comando">netstat -noa</div>
+
+        <p>
+          Muestra todas las conexiones de red activas y los puertos abiertos en
+          tu equipo. Incluye información clave como direcciones IP, estado de la
+          conexión y el proceso asociado.
+        </p>
+
+        <h3>🔍 Información que muestra</h3>
+        <ul>
+          <li>
+            <strong>Dirección IP local:</strong> tu equipo + puerto utilizado
+          </li>
+          <li>
+            <strong>Dirección IP remota:</strong> servidor o equipo conectado
+          </li>
+          <li><strong>Estado:</strong> situación actual de la conexión</li>
+          <li>
+            <strong>PID:</strong> identificador del proceso que usa la conexión
+          </li>
+        </ul>
+
+        <h3>📊 Columnas principales</h3>
+        <ul>
+          <li><strong>Local Address</strong> → tu IP + puerto</li>
+          <li><strong>Foreign Address</strong> → IP remota</li>
+          <li>
+            <strong>State</strong> → estado (LISTENING, ESTABLISHED, etc.)
+          </li>
+          <li><strong>PID</strong> → proceso asociado</li>
+        </ul>
+
+        <h3>⚠️ Caso real</h3>
+        <div class="caso">
+          👉 Detectar qué programas están conectados a Internet o consumiendo
+          red
+        </div>
+
+        <h2>🖧 Ver dispositivos en la red</h2>
+        <div class="comando">arp -a</div>
+
+        <div class="caso">👉 Ver quién está conectado al WiFi</div>
+
+        <h2>📶 Redes WiFi</h2>
+        <div class="comando">netsh wlan show networks</div>
+        <div class="comando">netsh wlan show profiles</div>
+
+        <div class="caso">👉 Ver redes disponibles y guardadas</div>
+
+        <h2>🛠 Reparación de red</h2>
+        <div class="comando">netsh winsock reset</div>
+        <div class="comando">netsh int ip reset</div>
+
+        <div class="caso">👉 Solucionar errores graves de conexión</div>
+
+        
+
+        <div class="tip">
+          💡 Tip: ejecutar CMD como administrador para mejores resultados
+        </div>
+
+        <a href="#" class="btn">Descargar PDF (opcional)</a>
       </section>
     </main>
 
