@@ -1094,6 +1094,175 @@ VecinoWiFi
 
         <hr />
       </section>
+      <section>
+        <article>
+          <header>
+            <h1>🌐 DNS Público (Public DNS)</h1>
+            <p>
+              Un <strong>DNS público</strong> es un servidor de resolución de
+              nombres accesible desde cualquier lugar de Internet. A diferencia
+              de los DNS de tu proveedor (ISP), estos son gestionados por
+              entidades externas y están abiertos para que cualquiera los use
+              sin restricciones de red.
+            </p>
+          </header>
+
+          <hr />
+
+          <section>
+            <h2>🧠 ¿Cómo funciona el proceso?</h2>
+            <p>Imagina que el DNS es la "agenda de contactos" de Internet:</p>
+            <ol>
+              <li>
+                <strong>Solicitud:</strong> Escribes un dominio en tu navegador
+                (ej: <code>youtube.com</code>).
+              </li>
+              <li>
+                <strong>Consulta:</strong> Tu dispositivo pregunta al DNS
+                configurado: <em>"¿Qué IP tiene este nombre?"</em>.
+              </li>
+              <li>
+                <strong>Resolución:</strong> El servidor busca en su base de
+                datos global.
+              </li>
+              <li>
+                <strong>Respuesta:</strong> El DNS te devuelve la dirección IP
+                (ej: <code>208.65.153.238</code>).
+              </li>
+              <li>
+                <strong>Conexión:</strong> Tu navegador usa esa IP para cargar
+                el sitio.
+              </li>
+            </ol>
+            <blockquote>
+              💡 <strong>En pocas palabras:</strong> Traduce nombres amigables
+              (letras) en direcciones IP (números) que las máquinas entienden.
+            </blockquote>
+          </section>
+
+          <section>
+            <h2>🌍 Proveedores Principales</h2>
+
+            <h3>🔹 Cloudflare (El más equilibrado)</h3>
+            <ul>
+              <li>
+                <strong>IPs:</strong> <code>1.1.1.1</code> /
+                <code>1.0.0.1</code>
+              </li>
+              <li>
+                ✔ <strong>Privacidad:</strong> No guarda registros (logs) que
+                puedan identificarte.
+              </li>
+              <li>
+                ✔ <strong>Velocidad:</strong> Considerado actualmente el más
+                rápido del mundo.
+              </li>
+            </ul>
+
+            <h3>🔹 Google Public DNS (El más robusto)</h3>
+            <ul>
+              <li>
+                <strong>IPs:</strong> <code>8.8.8.8</code> /
+                <code>8.8.4.4</code>
+              </li>
+              <li>
+                ✔ <strong>Disponibilidad:</strong> Casi 100% de tiempo en línea
+                gracias a su infraestructura global.
+              </li>
+              <li>
+                ❗ <strong>Privacidad:</strong> Recopila ciertos datos con fines
+                de diagnóstico y análisis.
+              </li>
+            </ul>
+
+            <h3>🔹 Quad9 (Enfoque en Seguridad)</h3>
+            <ul>
+              <li><strong>IP:</strong> <code>9.9.9.9</code></li>
+              <li>
+                ✔ <strong>Protección:</strong> Bloquea automáticamente dominios
+                asociados con malware y phishing antes de que carguen.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>🚫 Clasificación según Filtrado</h2>
+            <table
+              border="1"
+              style="width: 100%; border-collapse: collapse; text-align: left"
+            >
+              <thead>
+                <tr style="background-color: #f2f2f2">
+                  <th style="padding: 10px">Tipo de DNS</th>
+                  <th style="padding: 10px">Función Principal</th>
+                  <th style="padding: 10px">Ejemplo Recomendado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 10px"><strong>Abiertos</strong></td>
+                  <td style="padding: 10px">
+                    Sin censura ni filtros. Acceso total.
+                  </td>
+                  <td style="padding: 10px">Cloudflare (1.1.1.1)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px"><strong>De Seguridad</strong></td>
+                  <td style="padding: 10px">
+                    Bloquean virus, estafas y amenazas.
+                  </td>
+                  <td style="padding: 10px">Quad9 (9.9.9.9)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px">
+                    <strong>Familiar / Parental</strong>
+                  </td>
+                  <td style="padding: 10px">
+                    Filtran contenido adulto y apuestas.
+                  </td>
+                  <td style="padding: 10px">Cloudflare Family (1.1.1.3)</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <h2>⚡ Ventajas Clave</h2>
+            <ul>
+              <li>
+                <strong>Velocidad:</strong> Suelen ser más rápidos que los DNS
+                de los proveedores locales (ISP).
+              </li>
+              <li><strong>Estabilidad:</strong> Menos caídas de servicio.</li>
+              <li>
+                <strong>Capa extra de seguridad:</strong> Prevención nativa
+                contra sitios fraudulentos.
+              </li>
+              <li>
+                <strong>Evitar bloqueos:</strong> Permiten acceder a sitios que
+                algunos proveedores bloquean por región.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>🧩 Nota de Seguridad (Importante)</h2>
+            <p>
+              Cambiar el DNS <strong>no te hace invisible</strong>. Tu proveedor
+              de Internet todavía puede saber a qué dominios intentas acceder
+              mediante otros protocolos. Para un anonimato completo, se requiere
+              el uso de una <strong>VPN</strong>.
+            </p>
+
+            <h3>Herramientas de prueba:</h3>
+            <p>
+              Puedes verificar si tu DNS actual está bloqueando amenazas
+              intentando entrar a estos sitios de prueba seguros:
+            </p>
+            
+          </section>
+        </article>
+      </section>
     </main>
 
     <footer>
