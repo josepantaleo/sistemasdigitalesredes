@@ -914,7 +914,43 @@
           <li>Muchas conexiones sin motivo</li>
           <li>Procesos desconocidos o sin nombre</li>
         </ul>
+        <h2>🧑‍💻 tasklist</h2>
 
+        <p>👉 Muestra los procesos activos (programas en ejecución)</p>
+
+        <pre>tasklist</pre>
+
+        <p><strong>📌 Ejemplo:</strong></p>
+
+        <pre>
+chrome.exe
+explorer.exe
+</pre
+        >
+
+        <p>👉 También muestra el PID (número del proceso)</p>
+
+        <hr />
+
+        <h2>❌ taskkill</h2>
+
+        <p>👉 Sirve para cerrar un proceso</p>
+
+        <pre>taskkill /PID 1234</pre>
+
+        <p>👉 Cierra el proceso con ese número (PID)</p>
+
+        <h3>🔹 Forzar cierre</h3>
+
+        <pre>taskkill /PID 1234 /F</pre>
+
+        <p>👉 Obliga a cerrarlo (si está trabado)</p>
+
+        <h3>🔹 Por nombre</h3>
+
+        <pre>taskkill /IM chrome.exe</pre>
+
+        <p>👉 Cierra el programa usando su nombre</p>
         <hr />
 
         <h3>⚠️ Caso práctico</h3>
@@ -1057,44 +1093,6 @@ VecinoWiFi
         </ul>
 
         <hr />
-
-        <h2>🧑‍💻 tasklist</h2>
-
-        <p>👉 Muestra los procesos activos (programas en ejecución)</p>
-
-        <pre>tasklist</pre>
-
-        <p><strong>📌 Ejemplo:</strong></p>
-
-        <pre>
-chrome.exe
-explorer.exe
-</pre
-        >
-
-        <p>👉 También muestra el PID (número del proceso)</p>
-
-        <hr />
-
-        <h2>❌ taskkill</h2>
-
-        <p>👉 Sirve para cerrar un proceso</p>
-
-        <pre>taskkill /PID 1234</pre>
-
-        <p>👉 Cierra el proceso con ese número (PID)</p>
-
-        <h3>🔹 Forzar cierre</h3>
-
-        <pre>taskkill /PID 1234 /F</pre>
-
-        <p>👉 Obliga a cerrarlo (si está trabado)</p>
-
-        <h3>🔹 Por nombre</h3>
-
-        <pre>taskkill /IM chrome.exe</pre>
-
-        <p>👉 Cierra el programa usando su nombre</p>
       </section>
     </main>
 
