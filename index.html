@@ -7,25 +7,25 @@
   </head>
 
   <body>
-    <!-- HEADER → PRESENTACIÓN -->
     <header>
       <h1>Sistemas Digitales - Redes Informáticas</h1>
       <h2>Prof. J. Pantaleo</h2>
       <p>Concepto, clasificación y topologías de red</p>
     </header>
 
-    <!-- NAV → MENÚ -->
     <nav>
       <ul>
         <li><a href="#concepto">Concepto</a></li>
         <li><a href="#clasificacion">Clasificación</a></li>
         <li><a href="#topologias">Topologías</a></li>
+        <li><a href="#cisco">Cisco Packet Tracer</a></li>
+        <li><a href="#direcciones-ip">Direcciones IP</a></li>
+        <li><a href="#actividades">Actividades</a></li>
+        <li><a href="#comandos">Comandos</a></li>
       </ul>
     </nav>
 
-    <!-- MAIN → CONTENIDO -->
     <main class="contenedor">
-      <!-- SECTION → TEMA -->
       <section id="concepto">
         <h2>Concepto de Redes Informáticas</h2>
 
@@ -40,7 +40,6 @@
         </p>
       </section>
 
-      <!-- SECTION → TEMA -->
       <section id="clasificacion">
         <h2>Clasificación de Redes Informáticas</h2>
 
@@ -67,7 +66,6 @@
         <p><b>Cliente-Servidor:</b> con servidor central.</p>
       </section>
 
-      <!-- SECTION → TEMA -->
       <section id="topologias">
         <h2>Topologías de Red</h2>
 
@@ -79,7 +77,6 @@
         <img src="topo.jpg" alt="Topologías de red" />
 
         <div class="grilla">
-          <!-- ARTICLE → SUBTEMA -->
           <article class="tarjeta">
             <h3>Topología en Estrella</h3>
             <p>Todos los equipos se conectan a un nodo central.</p>
@@ -145,7 +142,6 @@
         </div>
       </section>
 
-      <!-- SECTION → TEMA -->
       <section>
         <h2>Tabla Comparativa</h2>
 
@@ -182,7 +178,6 @@
         </table>
       </section>
 
-      <!-- SECTION → VIDEO -->
       <section>
         <h2>Video explicativo</h2>
 
@@ -286,7 +281,7 @@
         >
       </section>
 
-      <section>
+      <section id="direcciones-ip">
         <h1>Direcciones IP y Redes</h1>
 
         <h2>1. ¿Qué es una dirección IP?</h2>
@@ -297,7 +292,7 @@
         </p>
         <p>
           Es como la dirección de tu casa, pero en Internet, para que los datos
-          sepan a dónde ir.
+          puedan saber a dónde ir.
         </p>
 
         <h2>2. Tipos de direcciones IP</h2>
@@ -369,7 +364,7 @@
         </ul>
 
         <h2>5. Clases de IP (IPv4)</h2>
-        <table>
+        <table border="1">
           <tr>
             <th>Clase</th>
             <th>Rango del primer octeto</th>
@@ -498,7 +493,7 @@
           correcto.
         </p>
       </section>
-      <section>
+      <section id="actividades">
         <h2>🧪 ACTIVIDADES PRÁCTICAS CON IP</h2>
 
         <div class="actividad">
@@ -563,7 +558,7 @@
           </ul>
         </div>
       </section>
-      <section>
+      <section id="comandos">
         <h1>🧠 Comandos de Red en Windows</h1>
         <p>Guía práctica con ejemplos reales</p>
         <h2>📌 Ver configuración de red</h2>
@@ -662,48 +657,141 @@
 
         <h3>📊 Columnas principales</h3>
         <ul>
-          <li><strong>Local Address</strong> → tu IP + puerto</li>
-          <li><strong>Foreign Address</strong> → IP remota</li>
           <li>
-            <strong>State</strong> → estado (LISTENING, ESTABLISHED, etc.)
+            <strong>Local Address</strong> → IP + puerto local <br /><small
+              >Ej: 192.168.1.10:50432</small
+            >
           </li>
-          <li><strong>PID</strong> → proceso asociado</li>
+
+          <li>
+            <strong>Foreign Address</strong> → IP + puerto del servidor remoto
+            <br /><small>Ej: 142.250.185.14:443 (Google)</small>
+          </li>
+
+          <li>
+            <strong>State</strong> → Estado de la conexión
+            <ul>
+              <li>
+                <strong>LISTENING</strong> → Puerto abierto esperando conexiones
+              </li>
+              <li>
+                <strong>ESTABLISHED</strong> → Conexión activa (intercambio de
+                datos)
+              </li>
+              <li>
+                <strong>TIME_WAIT</strong> → Conexión finalizada en espera de
+                cierre definitivo
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>PID</strong> → ID del proceso <br /><small
+              >Indica qué programa usa la conexión</small
+            >
+          </li>
         </ul>
 
-        <h3>⚠️ Caso real</h3>
-        <div class="caso">
-          👉 Detectar qué programas están conectados a Internet o consumiendo
-          red
+        <h4>🔍 Identificar el programa</h4>
+        <p>Relacioná el PID con su aplicación:</p>
+        <div class="comando">tasklist | findstr 5116</div>
+
+        <h4>🧠 Interpretación general</h4>
+        <ul>
+          <li>
+            ✔️ <strong>Conexiones ESTABLISHED (puerto 443)</strong><br />
+            👉 Tráfico HTTPS (seguro)<br />
+            👉 Normal en navegadores y apps online
+          </li>
+
+          <li>
+            ✔️ <strong>Conexiones TIME_WAIT</strong><br />
+            👉 Conexiones recientes ya cerradas<br />
+            👉 Mecanismo normal del sistema
+          </li>
+
+          <li>
+            ✔️ <strong>Puertos LISTENING</strong> (ej: 0.0.0.0:135, 445)<br />
+            👉 Servicios de Windows activos<br />
+            👉 Comportamiento esperado
+          </li>
+        </ul>
+        <h4>🛡️ Comandos útiles de seguridad</h4>
+        <div class="comando">netstat -ano | findstr ESTABLISHED</div>
+        <small>👉 Ver conexiones activas</small>
+
+        <div class="comando">netstat -ano | findstr LISTENING</div>
+        <small>👉 Ver puertos abiertos</small>
+        <h4>⚠️ Casos sospechosos</h4>
+
+        <div class="alerta">
+          <strong>Ejemplo 1:</strong>
+          <div class="comando">
+            TCP 192.168.18.105:52345 → 185.234.219.12:4444 → ESTABLISHED → PID
+            7896
+          </div>
+          <ul>
+            <li>🌐 IP desconocida</li>
+            <li>🔌 Puerto 4444 (asociado a backdoors)</li>
+            <li>🔄 Conexión activa</li>
+            <li>🆔 Proceso no identificado</li>
+            <li>🔎 Verificar en: https://www.whois.com/</li>
+          </ul>
         </div>
 
-        <h2>🖧 Ver dispositivos en la red</h2>
+        <div class="alerta">
+          <strong>Ejemplo 2:</strong>
+          <div class="comando">TCP 0.0.0.0:5555 → LISTENING → PID 9120</div>
+          <ul>
+            <li>🔌 Puerto abierto</li>
+            <li>👉 Posible acceso remoto</li>
+            <li>👉 Uso sospechoso o herramientas de debug</li>
+          </ul>
+        </div>
+
+        <h4>🧪 Cómo investigarlo</h4>
+        <ul>
+          <li>
+            Ver proceso:
+            <div class="comando">tasklist | findstr 7896</div>
+          </li>
+          <li>Identificar si el programa es conocido</li>
+          <li>Buscar el nombre en internet</li>
+        </ul>
+
+        <h4>🚩 Señales de alerta</h4>
+        <ul>
+          <li>IPs desconocidas o sospechosas</li>
+          <li>Puertos comunes en malware: 4444, 5555, 1337, 6666</li>
+          <li>Muchas conexiones sin motivo</li>
+          <li>Procesos desconocidos o sin nombre</li>
+        </ul>
+
+        <hr />
+
+        <h3>⚠️ Caso práctico</h3>
+        <div class="caso">👉 Detectar qué programas están usando Internet</div>
+
+        <h3>🖧 Dispositivos en la red</h3>
         <div class="comando">arp -a</div>
+        <div class="caso">👉 Ver equipos conectados en la red local</div>
 
-        <div class="caso">👉 Ver quién está conectado al WiFi</div>
-
-        <h2>📶 Redes WiFi</h2>
+        <h3>📶 Redes WiFi</h3>
         <div class="comando">netsh wlan show networks</div>
         <div class="comando">netsh wlan show profiles</div>
-
         <div class="caso">👉 Ver redes disponibles y guardadas</div>
 
-        <h2>🛠 Reparación de red</h2>
+        <h3>🛠 Reparación de red</h3>
         <div class="comando">netsh winsock reset</div>
         <div class="comando">netsh int ip reset</div>
-
-        <div class="caso">👉 Solucionar errores graves de conexión</div>
-
-        
+        <div class="caso">👉 Solucionar problemas de conexión</div>
 
         <div class="tip">
-          💡 Tip: ejecutar CMD como administrador para mejores resultados
+          💡 Ejecutar CMD como administrador para mejores resultados
         </div>
-
-        <a href="#" class="btn">Descargar PDF (opcional)</a>
       </section>
     </main>
 
-    <!-- FOOTER → CIERRE -->
     <footer>
       <p>Teórico - Redes Informáticas</p>
     </footer>
