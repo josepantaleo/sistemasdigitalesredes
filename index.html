@@ -722,6 +722,154 @@
 
         <div class="comando">netstat -ano | findstr LISTENING</div>
         <small>👉 Ver puertos abiertos</small>
+        <h1>📊 PUERTOS MÁS USADOS (DETALLADO)</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Puerto</th>
+              <th>Protocolo</th>
+              <th>Servicio</th>
+              <th>Tipo de servicio</th>
+              <th>Descripción ampliada</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>80</td>
+              <td><span class="tag tcp">TCP</span></td>
+              <td>HTTP</td>
+              <td>Web</td>
+              <td>Protocolo para navegar páginas sin cifrado.</td>
+            </tr>
+
+            <tr>
+              <td>443</td>
+              <td><span class="tag tcp">TCP</span></td>
+              <td>HTTPS</td>
+              <td class="seguro">Web segura</td>
+              <td>Versión cifrada de HTTP usando SSL/TLS.</td>
+            </tr>
+
+            <tr>
+              <td>53</td>
+              <td>
+                <span class="tag tcp">TCP</span> /
+                <span class="tag udp">UDP</span>
+              </td>
+              <td>DNS</td>
+              <td>Infraestructura</td>
+              <td>Convierte nombres de dominio en direcciones IP.</td>
+            </tr>
+
+            <tr>
+              <td>22</td>
+              <td><span class="tag tcp">TCP</span></td>
+              <td>SSH</td>
+              <td class="seguro">Acceso remoto</td>
+              <td>Permite controlar equipos de forma remota y segura.</td>
+            </tr>
+
+            <tr>
+              <td>21</td>
+              <td><span class="tag tcp">TCP</span></td>
+              <td>FTP</td>
+              <td class="peligro">Transferencia</td>
+              <td>Transferencia de archivos sin cifrado (inseguro).</td>
+            </tr>
+
+            <tr>
+              <td>25</td>
+              <td><span class="tag tcp">TCP</span></td>
+              <td>SMTP</td>
+              <td>Correo</td>
+              <td>Protocolo usado para enviar correos electrónicos.</td>
+            </tr>
+
+            <tr>
+              <td>110</td>
+              <td><span class="tag tcp">TCP</span></td>
+              <td>POP3</td>
+              <td>Correo</td>
+              <td>Descarga correos al dispositivo.</td>
+            </tr>
+
+            <tr>
+              <td>143</td>
+              <td><span class="tag tcp">TCP</span></td>
+              <td>IMAP</td>
+              <td>Correo</td>
+              <td>Permite leer correos directamente desde el servidor.</td>
+            </tr>
+
+            <tr>
+              <td>3389</td>
+              <td><span class="tag tcp">TCP</span></td>
+              <td>RDP</td>
+              <td class="peligro">Acceso remoto</td>
+              <td>Control remoto de Windows. Frecuente objetivo de ataques.</td>
+            </tr>
+
+            <tr>
+              <td>445</td>
+              <td><span class="tag tcp">TCP</span></td>
+              <td>SMB</td>
+              <td class="peligro">Red local</td>
+              <td>Compartición de archivos e impresoras en Windows.</td>
+            </tr>
+
+            <tr>
+              <td>139</td>
+              <td><span class="tag tcp">TCP</span></td>
+              <td>NetBIOS</td>
+              <td class="peligro">Red local</td>
+              <td>Comunicación en redes antiguas de Windows.</td>
+            </tr>
+
+            <tr>
+              <td>137-138</td>
+              <td><span class="tag udp">UDP</span></td>
+              <td>NetBIOS</td>
+              <td>Red local</td>
+              <td>Servicios de nombres y datagramas en red.</td>
+            </tr>
+
+            <tr>
+              <td>67-68</td>
+              <td><span class="tag udp">UDP</span></td>
+              <td>DHCP</td>
+              <td>Infraestructura</td>
+              <td>Asigna direcciones IP automáticamente en la red.</td>
+            </tr>
+
+            <tr>
+              <td>123</td>
+              <td><span class="tag udp">UDP</span></td>
+              <td>NTP</td>
+              <td>Infraestructura</td>
+              <td>Sincroniza la hora del sistema con servidores.</td>
+            </tr>
+
+            <tr>
+              <td>8080</td>
+              <td><span class="tag tcp">TCP</span></td>
+              <td>HTTP alt</td>
+              <td>Web</td>
+              <td>Puerto alternativo para servidores web o pruebas.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info">
+          <h2>🧠 Interpretación rápida</h2>
+          <p><strong>80 / 443</strong> → navegación normal 🌐</p>
+          <p><strong>53</strong> → internet funcionando</p>
+          <p><strong>22 / 3389</strong> → acceso remoto ⚠️</p>
+          <p>
+            <strong>445 / 139</strong> → red local (riesgo si están abiertos)
+          </p>
+        </div>
         <h4>⚠️ Casos sospechosos</h4>
 
         <div class="alerta">
@@ -776,19 +924,162 @@
         <div class="comando">arp -a</div>
         <div class="caso">👉 Ver equipos conectados en la red local</div>
 
-        <h3>📶 Redes WiFi</h3>
-        <div class="comando">netsh wlan show networks</div>
-        <div class="comando">netsh wlan show profiles</div>
-        <div class="caso">👉 Ver redes disponibles y guardadas</div>
+        <h2>📶 Redes WiFi</h2>
 
-        <h3>🛠 Reparación de red</h3>
-        <div class="comando">netsh winsock reset</div>
-        <div class="comando">netsh int ip reset</div>
-        <div class="caso">👉 Solucionar problemas de conexión</div>
+        <h3>🔍 Redes disponibles</h3>
+        <p>Muestra todas las redes WiFi disponibles cerca tuyo:</p>
+        <pre>netsh wlan show networks</pre>
 
-        <div class="tip">
-          💡 Ejecutar CMD como administrador para mejores resultados
-        </div>
+        <h3>💾 Redes guardadas</h3>
+        <p>Muestra las redes WiFi que ya están guardadas en tu PC:</p>
+        <pre>netsh wlan show profiles</pre>
+
+        <p>👉 Permite ver redes disponibles y guardadas.</p>
+
+        <hr />
+
+        <h2>🧪 Ejemplo práctico</h2>
+
+        <p>Si ejecutás:</p>
+        <pre>netsh wlan show profiles</pre>
+
+        <p>Podés ver algo como:</p>
+
+        <pre>
+Perfiles de usuario:
+-------------------
+Casa
+Escuela
+VecinoWiFi
+</pre
+        >
+
+        <p>👉 Eso significa que tu PC tiene guardadas esas redes.</p>
+
+        <hr />
+
+        <h2>🚨 Dato importante (seguridad)</h2>
+
+        <p>Con este comando podés ver la contraseña de una red guardada:</p>
+
+        <pre>netsh wlan show profile name="Casa" key=clear</pre>
+
+        <p>👉 Muestra la clave WiFi almacenada 🔑</p>
+
+        <p><strong>⚠️ Recomendaciones:</strong></p>
+        <ul>
+          <li>No prestes tu PC sin supervisión.</li>
+          <li>
+            Cualquier persona con acceso puede ver las contraseñas guardadas.
+          </li>
+        </ul>
+
+        <hr />
+
+        <h2>🛠 Reparación de red</h2>
+
+        <p>
+          Estos comandos se utilizan para solucionar problemas de conexión a
+          Internet o errores de red.
+        </p>
+
+        <hr />
+
+        <h3>🔄 netsh winsock reset</h3>
+
+        <p><strong>¿Qué hace?</strong></p>
+        <p>
+          Reinicia el catálogo Winsock, que es el encargado de gestionar cómo
+          los programas acceden a la red.
+        </p>
+
+        <p><strong>Funciones:</strong></p>
+        <ul>
+          <li>Elimina configuraciones dañadas</li>
+          <li>Corrige errores causados por virus o software</li>
+          <li>Restaura la conexión a su estado original</li>
+        </ul>
+
+        <p><strong>Cuándo usarlo:</strong></p>
+        <ul>
+          <li>El navegador no conecta</li>
+          <li>Errores de red sin causa aparente</li>
+        </ul>
+
+        <p>
+          <strong>Importante:</strong> Es necesario reiniciar la PC después de
+          ejecutarlo.
+        </p>
+
+        <hr />
+
+        <h3>🌐 netsh int ip reset</h3>
+
+        <p><strong>¿Qué hace?</strong></p>
+        <p>Restablece la configuración del protocolo TCP/IP.</p>
+
+        <p><strong>Funciones:</strong></p>
+        <ul>
+          <li>Corrige configuraciones incorrectas de red</li>
+          <li>Restablece la obtención automática de IP</li>
+          <li>Soluciona problemas con DHCP</li>
+        </ul>
+
+        <p><strong>Cuándo usarlo:</strong></p>
+        <ul>
+          <li>Mensaje "Sin acceso a Internet"</li>
+          <li>Dirección IP inválida (ej: 169.254.x.x)</li>
+        </ul>
+
+        <hr />
+
+        <h3>⚠️ Recomendaciones</h3>
+
+        <ul>
+          <li>Ejecutar CMD como administrador</li>
+          <li>Puede borrar configuraciones manuales de red</li>
+          <li>Usar como solución cuando otros métodos no funcionan</li>
+        </ul>
+
+        <hr />
+
+        <h2>🧑‍💻 tasklist</h2>
+
+        <p>👉 Muestra los procesos activos (programas en ejecución)</p>
+
+        <pre>tasklist</pre>
+
+        <p><strong>📌 Ejemplo:</strong></p>
+
+        <pre>
+chrome.exe
+explorer.exe
+</pre
+        >
+
+        <p>👉 También muestra el PID (número del proceso)</p>
+
+        <hr />
+
+        <h2>❌ taskkill</h2>
+
+        <p>👉 Sirve para cerrar un proceso</p>
+
+        <pre>taskkill /PID 1234</pre>
+
+        <p>👉 Cierra el proceso con ese número (PID)</p>
+
+        <h3>🔹 Forzar cierre</h3>
+
+        <pre>taskkill /PID 1234 /F</pre>
+
+        <p>👉 Obliga a cerrarlo (si está trabado)</p>
+
+        <h3>🔹 Por nombre</h3>
+
+        <pre>taskkill /IM chrome.exe</pre>
+
+        <p>👉 Cierra el programa usando su nombre</p>
       </section>
     </main>
 
