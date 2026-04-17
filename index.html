@@ -1221,6 +1221,10 @@ VecinoWiFi
                     Filtran contenido adulto y apuestas.
                   </td>
                   <td style="padding: 10px">Cloudflare Family (1.1.1.3)</td>
+                                    <td style="padding: 10px">
+                    Filtran contenido adulto y apuestas.
+                  </td>
+                  <td style="padding: 10px">Cloudflare Family (1.1.1.3)</td
                 </tr>
               </tbody>
             </table>
@@ -1259,9 +1263,415 @@ VecinoWiFi
               Puedes verificar si tu DNS actual está bloqueando amenazas
               intentando entrar a estos sitios de prueba seguros:
             </p>
-            
+            <h1>🧪 Pruebas de DNS</h1>
+
+            <p>
+              Usa estos enlaces para comprobar si tu DNS está filtrando
+              contenido:
+            </p>
+
+            <ul>
+              <li>
+                <a href="http://welcome.opendns.com" target="_blank"
+                  >OpenDNS Test</a
+                >
+              </li>
+              <li>
+                <a href="http://internetbadguys.com" target="_blank"
+                  >Internet Bad Guys (malware test)</a
+                >
+              </li>
+              <li>
+                <a href="http://www.exampleadultsite.com" target="_blank"
+                  >Adult Content Test (DNS filtering)</a
+                >
+              </li>
+            </ul>
+
+            <p>
+              📌 Si el DNS funciona, algunos de estos sitios deberían bloquearse
+              o mostrar advertencia.
+            </p>
           </section>
         </article>
+      </section>
+      <section>
+        <h1>💻 LABORATORIO PRÁCTICO AVANZADO</h1>
+<h2>DIAGNÓSTICO COMPLETO DE RED – WINDOWS</h2>
+<h2>Reponde en la carpeta cada actividad</h2>
+
+<h3>🎯 Objetivo</h3>
+<p>Diagnosticar el estado real de la red, identificar fallas, analizar tráfico y detectar riesgos básicos de seguridad. Utiliza el comando cmd (inicio- ejecutar)</p>
+
+<hr>
+
+<h3>📊 PARTE 1 – ANÁLISIS DE CONFIGURACIÓN</h3>
+
+<table border="1">
+<tr>
+<th>PASO</th>
+<th>COMANDO</th>
+<th>COMPLETAR</th>
+<th>INTERPRETAR</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>ipconfig</td>
+<td>IP: ______</td>
+<td>✔ ¿Es privada? (192.168 / 10 / 172) ✔ ¿169.254? = ERROR</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>ipconfig /all</td>
+<td>
+Puerta de enlace: ______<br>
+DNS: ______<br>
+DHCP: SI / NO
+</td>
+<td>
+✔ ¿Existe?<br>
+✔ ¿Está en el mismo rango?<br>
+✔ ¿Es público (8.8.8.8 / 1.1.1.1) o del proveedor?<br>
+✔ SI = automático ✔ NO = manual
+</td>
+</tr>
+</table>
+
+<h4>🧠 DECISIÓN TÉCNICA (OBLIGATORIA) responde en tu carpeta</h4>
+<p>
+✔ Configuración correcta<br>
+❌ Error de configuración
+</p>
+
+
+<hr>
+
+<h3>🌐 PARTE 2 – CONECTIVIDAD</h3>
+
+<table border="1">
+<tr>
+<th>TEST</th>
+<th>COMANDO</th>
+<th>RESPONDE (SI exitoso / NO falla)</th>
+<th>DIAGNÓSTICO</th>
+</tr>
+
+<tr>
+<td>Red local</td>
+<td>ping TU_PUERTA DE ENLACE</td>
+<td>______</td>
+<td>✔ Si falla → problema en red local</td>
+</tr>
+
+<tr>
+<td>Internet</td>
+<td>ping 8.8.8.8</td>
+<td>______</td>
+<td>✔ Si falla → sin Internet</td>
+</tr>
+
+<tr>
+<td>DNS</td>
+<td>ping google.com</td>
+<td>______</td>
+<td>✔ Si falla → problema DNS</td>
+</tr>
+</table>
+
+<h4>🧠 CONCLUSIÓN responde en tu carpeta</h4>
+<p>
+✔ Red local: FUNCIONA / FALLA<br>
+✔ Internet: FUNCIONA / FALLA<br>
+✔ DNS: FUNCIONA / FALLA
+</p>
+
+<p><strong>👉 Diagnóstico final:</strong></p>
+<p>________________________________________</p>
+
+<hr>
+
+<h3>🧭 PARTE 3 – RUTA Y LATENCIA</h3>
+
+<p><strong>Comando:</strong> tracert google.com</p>
+
+<table border="1">
+<tr>
+<th>DATO</th>
+<th>COMPLETAR</th>
+</tr>
+
+<tr>
+<td>Cantidad de saltos</td>
+<td>______</td>
+</tr>
+
+<tr>
+<td>Mayor latencia</td>
+<td>______ ms</td>
+</tr>
+
+<tr>
+<td>Número de salto crítico mayor a 20ms</td>
+<td>______</td>
+</tr>
+</table>
+
+<h4>🧠 ANÁLISIS responde en tu carpeta</h4>
+<p>
+Problema en red local<br> 
+Problema en proveedor (ISP)<br>
+Problema externo (Internet)
+</p>
+
+<hr>
+
+<h3>🔍 PARTE 4 – CONEXIONES Y PROCESOS responde en tu carpeta</h3>
+
+<p><strong>Comando:</strong> netstat -noa</p>
+
+<table border="1">
+<tr>
+<th>DATO</th>
+<th>VALOR CANTIDAD</th>
+</tr>
+
+<tr>
+<td>Conexiones ESTABLISHED</td>
+<td>______</td>
+</tr>
+
+<tr>
+<td>Puertos LISTENING</td>
+<td>______</td>
+</tr>
+</table>
+
+<p><strong>Comando:</strong> netstat -ano | findstr ESTABLISHED</p>
+
+<h4>Elegir una conexión responde en tu carpeta:</h4>
+
+<table border="1">
+<tr>
+<th>DATO</th>
+<th>¿QUE PROGRAMA ES?</th>
+</tr>
+
+<tr>
+<td>IP remota</td>
+<td>______</td>
+</tr>
+
+<tr>
+<td>Puerto</td>
+<td>______</td>
+</tr>
+
+<tr>
+<td>PID</td>
+<td>______</td>
+</tr>
+</table>
+
+<p><strong>Comando:</strong> tasklist | findstr PID responde en tu carpeta</p>
+
+<table border="1">
+<tr>
+<th>DATO</th>
+<th>NOMBRE DEL PROGRAMA</th>
+</tr>
+
+<tr>
+<td>Programa</td>
+<td>______</td>
+</tr>
+</table>
+
+
+<hr>
+
+<h3>🛡 PARTE 5 – ANÁLISIS DE PUERTOS</h3>
+
+<table border="1">
+<tr>
+<th>PUERTO</th>
+<th>¿APARECE? (SI / NO)</th>
+<th>INTERPRETACIÓN</th>
+<th>RIESGO</th>
+</tr>
+
+<tr>
+<td>80 / 443</td>
+<td></td>
+<td>Navegación web</td>
+<td>Bajo</td>
+</tr>
+
+<tr>
+<td>53</td>
+<td></td>
+<td>DNS</td>
+<td>Bajo</td>
+</tr>
+
+<tr>
+<td>3389</td>
+<td></td>
+<td>Acceso remoto</td>
+<td>Alto</td>
+</tr>
+
+<tr>
+<td>445</td>
+<td></td>
+<td>Red Windows</td>
+<td>Medio</td>
+</tr>
+
+<tr>
+<td>4444 / 5555</td>
+<td></td>
+<td>Posible malware</td>
+<td>Crítico</td>
+</tr>
+</table>
+
+<h4>🧠 CONCLUSIÓN DE SEGURIDAD responde en tu carpeta</h4>
+<p>
+Nivel de riesgo alto - medio - bajo:<br>
+</p>
+
+<hr>
+
+<h3>🖧 PARTE 6 – RED LOCAL</h3>
+
+<p><strong>Comando:</strong> arp -a</p>
+
+<table border="1">
+<tr>
+<th>DATO</th>
+<th>COMPLETAR responde en tu carpeta</th>
+</tr>
+
+<tr>
+<td>Cantidad de dispositivos</td>
+<td>______</td>
+</tr>
+
+<tr>
+<td>IP del router</td>
+<td>______</td>
+</tr>
+</table>
+<h1>🔧 CAMBIO DE DNS EN WINDOWS 10</h1>
+
+<h3>🎯 Objetivo</h3>
+<p>Configurar manualmente servidores DNS, verificar su funcionamiento y analizar el impacto en la conectividad.</p>
+
+<hr>
+
+<h3>📁 IMPORTANTE</h3>
+<p>👉 Responder en tu carpeta .</p>
+
+
+<hr>
+
+<h3>📋 PARTE 1 – CONFIGURACIÓN</h3>
+
+<h4>🔢 PASOS</h4>
+<ol>
+<li>Abrir Panel de control</li>
+<li>Ir a Redes e Internet</li>
+<li>Entrar en Centro de redes y recursos compartidos</li>
+<li>Hacer clic en Cambiar configuración del adaptador</li>
+<li>Seleccionar la conexión activa (Wi-Fi o Ethernet)</li>
+<li>Clic derecho → Propiedades</li>
+<li>Doble clic en Protocolo de Internet versión 4 (IPv4)</li>
+<li>Marcar: Usar las siguientes direcciones de servidor DNS</li>
+</ol>
+
+<p><strong>Completar:</strong></p>
+<p>DNS preferido: __________</p>
+<p>DNS alternativo: __________</p>
+
+<p><strong>👉 Sugerencias:</strong></p>
+<ul>
+<li>8.8.8.8</li>
+<li>1.1.1.1</li>
+</ul>
+
+<h4>🧠 ANÁLISIS responde en tu carpeta</h4>
+<ul>
+<li>¿El DNS configurado es público o privado?</li>
+<li>¿Qué empresa lo provee?</li>
+<li>¿Por qué podría ser más rápido o seguro?</li>
+</ul>
+
+<hr>
+
+<h3>🌐 PARTE 2 – VERIFICACIÓN responde en tu carpeta</h3>
+
+<p>Abrir CMD y ejecutar:</p>
+<pre>ipconfig /all</pre>
+
+<h4>🔍 COMPLETAR</h4>
+<p>DNS detectado: __________________________</p>
+<p>¿Coincide con el configurado? SI / NO</p>
+
+<hr>
+
+<h3>🌍 PARTE 3 – PRUEBAS DE CONECTIVIDAD</h3>
+
+<p>Ejecutar:</p>
+<pre>
+ping google.com
+ping 8.8.8.8
+</pre>
+
+<table border="1">
+<tr>
+<th>PRUEBA</th>
+<th>¿RESPONDE? (SI / NO)</th>
+<th>TIEMPO (ms)</th>
+</tr>
+
+<tr>
+<td>google.com</td>
+<td>______</td>
+<td>______</td>
+</tr>
+
+<tr>
+<td>8.8.8.8</td>
+<td>______</td>
+<td>______</td>
+</tr>
+</table>
+
+
+<hr>
+
+<h3>🛠 PARTE 4 – TOMA DE DECISIONES responde en tu carpeta</h3>
+
+<p>✔ DNS funciona correctamente o bien</p>
+<p>❌ DNS mal configurado</p>
+
+<hr>
+
+
+<hr>
+
+<h3>🚀 DESAFÍO</h3>
+<ul>
+<li>Cambiar a otro DNS (ej: 9.9.9.9)</li>
+<li>Repetir pruebas</li>
+<li>Comparar tiempos</li>
+</ul>
+
+<p><strong>👉 ¿Cuál fue más rápido? ¿Por qué?</strong></p>
+<p>________________________________________</p>
+
       </section>
     </main>
 
